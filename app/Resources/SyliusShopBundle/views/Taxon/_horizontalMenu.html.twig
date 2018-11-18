@@ -1,0 +1,60 @@
+<div class="pull-right cart-shop-container">
+    {{ render(url('sylius_shop_partial_cart_summary', {'template': '@SyliusShop/Cart/_widget.html.twig'})) }}
+</div>
+<nav class="navbar navbar-toggler navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse header-navigation" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="navbar-brand" href="{{ path('sylius_shop_homepage') }}">
+                    <i class="fa fa-home fa-lg"></i> {{ 'home.title'|trans }}
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="navbar-brand" href="#">Ofertas</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="navbar-brand dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ 'taxon.label'|trans }}
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    {% macro item(taxon, length, key) %}
+                        {% import _self as macros %}
+                        {% if taxon.children|length > 0 %}
+                            {#<div class="ui dropdown item">
+                            <span class="text">{{ taxon.name }}</span>
+                            <i class="dropdown icon"></i>
+                            <div class="menu">
+                            {% for childTaxon in taxon.children %}
+                            {{ macros.item(childTaxon) }}
+                            {% endfor %}
+                            </div>
+                            </div>#}
+                        {% else %}
+                            <a href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}"
+                               class="dropdown-item">{{ taxon.name }}</a>
+                            {% if (key + 1) < length %}
+                                <div class="dropdown-divider"></div>
+                            {% endif %}
+                        {% endif %}
+                    {% endmacro %}
+                    {% import _self as macros %}
+                    {% if taxons|length > 0 %}
+                        {% for key, taxon in taxons %}
+                            {{ macros.item(taxon, taxons|length, key) }}
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="navbar-brand" href="#">Contáctenos</a>
+            </li>
+        </ul>
+    </div>
+</nav>

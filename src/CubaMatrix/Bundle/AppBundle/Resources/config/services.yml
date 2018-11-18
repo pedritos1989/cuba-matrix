@@ -1,0 +1,4 @@
+services:
+#    cuba_matrix_app.example:
+#        class: CubaMatrix\Bundle\AppBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

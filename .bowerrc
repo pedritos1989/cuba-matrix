@@ -1,0 +1,11 @@
+{
+  "directory": "web/assets/cubamatrix/vendor/",
+  "color": true,
+  "save": true,
+  "interactive": true,
+  "scripts": {
+    "preinstall": "",
+    "postinstall": "",
+    "preuninstall": ""
+  }
+}

@@ -1,0 +1,93 @@
+#sylius-cart-button {
+    background: #e84d1c;
+}
+
+#sylius-cart-button > i {
+    color: #fff;
+}
+
+#sylius-cart-button > span {
+    color: #fff;
+}
+
+.header-navigation > ul > li > a {
+    color: #767f88 !important;
+    padding: 18px 18px 18px;
+    text-transform: uppercase;
+}
+
+.header-navigation > ul > li > div > a {
+    color: #767f88 !important;
+    /*text-transform: uppercase;*/
+}
+
+.header-navigation > ul > li > div > a:focus {
+    color: #e84d1c !important;
+    background-color: #fff !important;
+}
+
+.header-navigation ul > li.active > a, .header-navigation ul > li > a:hover, .header-navigation ul > li > a:focus, .header-navigation ul > li.open > a, .header-navigation ul > li.open > a:hover, .header-navigation ul > li.open > a:focus {
+    color: #e84d1c !important;
+}
+
+.sticker-new {
+    background: url(../images/stickers/new.png) no-repeat;
+    left: auto;
+    right: 0;
+}
+
+.sticker {
+    position: absolute;
+    top: 0;
+    width: 63px;
+    height: 63px;
+}
+
+.steps-block-red {
+    background: #e84d1c;
+}
+
+.steps-block {
+    color: #fff;
+    padding: 30px 0;
+}
+
+.steps-block .fa-truck, .steps-block .fa-envelope, .steps-block .fa-phone {
+    font-size: 30px;
+    border: solid 2px #fff;
+    border-radius: 30px !important;
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 14px;
+    margin-right: 11px;
+    float: left;
+}
+
+.steps-block-col span {
+    display: block;
+    width: 36px;
+    height: 71px;
+    background: url(../images/angles/step3-angle-right.png) no-repeat 100% 50%;
+    position: absolute;
+    top: 0;
+    right: 10px;
+}
+
+#footer {
+    margin-top: unset;
+}
+
+.mailto {
+    color: #fff;
+}
+
+.ui.small.image, .ui.small.images .image, .ui.small.images img, .ui.small.images svg {
+    max-width: 175px;
+    font-size: .92857143rem;
+}
+
+.cart-shop-container {
+    padding: 12px;
+}

@@ -1,0 +1,21 @@
+@media (max-width: 992px) {
+    .steps-block-col {
+        border: 2px solid #FFF;
+        margin: 0 25px 20px 15px;
+        padding: 20px 20px 15px;
+        min-height: auto;
+        float: none;
+    }
+
+    .steps-block-col .fa {
+        display: block;
+    }
+
+    .steps-block-col span {
+        background: unset;
+    }
+
+    .cart-shop-container {
+        padding: unset;
+    }
+}

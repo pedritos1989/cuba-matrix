@@ -1,0 +1,26 @@
+# System
+CUBAMATRIX: Cuba Matrix
+system:
+  title: Cuba Matrix
+  logo: Cuba Matrix logo
+
+# Actions
+action:
+  search: Buscar
+
+# Globals
+home:
+  title: Inicio
+  alt: Inicio
+  label: Inicio
+  page:
+    title: Página Principal
+    alt: Página Principal
+
+# Products
+product:
+  label: Producto
+
+# Taxons
+taxon:
+  label: Categorías
