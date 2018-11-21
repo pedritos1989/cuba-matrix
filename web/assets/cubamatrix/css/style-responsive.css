@@ -18,4 +18,60 @@
     .cart-shop-container {
         padding: unset;
     }
+
+    .cart-shop-container {
+        padding: 10px;
+    }
+
+    #cubamatrix-carousel-responsive {
+        display: unset;
+    }
+
+    #cubamatrix-carousel {
+        display: none;
+    }
+
+    .carousel-caption > p > a > i {
+        /*font-size: 50%;*/
+    }
+
+    .cubamatrix-theme > img {
+        left: 15%;
+    }
+}
+
+@media (max-width: 496px) {
+    #center {
+        display: none;
+    }
+}
+
+@media (max-width: 610px) {
+    .big-logo {
+        display: none;
+    }
+
+    .small-logo {
+        display: unset;
+    }
+
+    .small-logo > img {
+        width: 5em !important;
+    }
+
+    .cubamatrix-theme > img {
+        left: 40%;
+    }
+}
+
+@media (max-width: 654px) {
+    .responsive-width-li {
+        display: unset !important;
+    }
+}
+
+@media (max-width: 425px) {
+    .cubamatrix-theme > img {
+        left: 35%;
+    }
 }

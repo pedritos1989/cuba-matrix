@@ -22,10 +22,14 @@
         {% include '@CubaMatrixApp/_stylesheets.html.twig' with {'path': 'assets/cubamatrix/css/style.css'} %}
         {% include '@CubaMatrixApp/_stylesheets.html.twig' with {'path': 'assets/cubamatrix/css/style-responsive.css'} %}
         {% include '@CubaMatrixApp/_stylesheets.html.twig' with {'path': 'assets/cubamatrix/vendor/bootstrap/dist/css/bootstrap.min.css'} %}
-        {#{% include '@CubaMatrixApp/_stylesheets.html.twig' with {'path': 'assets/cubamatrix/css/simplify.css'} %}#}
+        {% include '@CubaMatrixApp/_stylesheets.html.twig' with {'path': 'assets/cubamatrix/css/simplify.css'} %}
+        {% include '@CubaMatrixApp/_stylesheets.html.twig' with {'path': 'assets/cubamatrix/vendor/hover/css/hover-min.css'} %}
         {{ sonata_block_render_event('sylius.shop.layout.stylesheets') }}
     {% endblock %}
 
+    {% block favicon %}
+        <link rel="icon" type="image/png" href="{{ asset('assets/cubamatrix/images/LOGO CUBAMATRIX.png') }}"/>
+    {% endblock %}
     {{ sonata_block_render_event('sylius.shop.layout.head') }}
 </head>
 
@@ -35,7 +39,7 @@
     {% block top %}
         <div class="ui container">
             <div class="d-flex justify-content-between">
-                <div id="left">
+                <div id="left" class="col-md-3 col-sm-3 col-lg-3" style="padding: 15px">
                     {{ sonata_block_render_event('sylius.shop.layout.before_currency_switcher') }}
                     {{ render(controller('sylius.controller.shop.currency_switch:renderAction')) }}
                     {#{{ render(controller('sylius.controller.shop.locale_switch:renderAction')) }}#}
@@ -43,33 +47,41 @@
                     {% include '@SyliusShop/_header.html.twig' %}
                     {{ sonata_block_render_event('sylius.shop.layout.after_header') }}
                 </div>
-                {#<div id="right">#}
-                {#<form class="form-inline my-2 my-lg-0">#}
-                {#<input class="form-control mr-sm-2" type="search"#}
-                {#placeholder="{{ 'action.search'|trans }} {{ 'product.label'|trans|lower }}"#}
-                {#aria-label="{{ 'action.search'|trans }} {{ 'product.label'|trans|lower }}">#}
-                {#<button class="btn btn-outline-success my-2 my-sm-0"#}
-                {#type="submit">{{ 'action.search'|trans }}</button>#}
-                {#</form>#}
-                {#</div>#}
-                <div id="center" style="padding: 30px;margin-bottom: 1%">
+                <div id="center" class="col-md-6 col-sm-6 col-lg-6" style="padding: 30px">
+                    <div class="form-group">
+                        <form method="get" action="{{ path('sylius_admin_product_index') }}">
+                            <div class="input-group">
+                                <input name="criteria[search][value]"
+                                       placeholder="{{ 'sylius.ui.search_products'|trans }}..."
+                                       type="search" class="form-control">
+                                <div class="input-group-btn">
+                                    <button type="submit" class="btn btn-primary no-shadow" tabindex="-1"><i
+                                                class="fa fa-search"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div id="right" class="col-md-3 col-sm-3 col-lg-3" style="padding: 30px;margin-bottom: 1%">
                     {{ render(controller('sylius.controller.shop.security_widget:renderAction')) }}
                     {{ sonata_block_render_event('sylius.shop.layout.after_security_widget') }}
                 </div>
             </div>
         </div>
-        <div class="dropdown-divider" style="border-color:#edeeef;"></div>
     {% endblock %}
 
-    <div class="ui container">
-        {% block header %}
-            <header>
-                {{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': 'category', 'template': '@SyliusShop/Taxon/_horizontalMenu.html.twig'})) }}
-            </header>
-        {% endblock %}
+    <div class="system-menu">
+        <div class="ui container">
+            {% block header %}
+                <header>
+                    {{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': 'category', 'template': '@SyliusShop/Taxon/_horizontalMenu.html.twig'})) }}
+                </header>
+            {% endblock %}
+        </div>
     </div>
 
     {% block slider %}
+        <div style="margin-bottom: 1%"></div>
     {% endblock %}
 
     <div class="ui container">
@@ -87,7 +99,7 @@
     <div class="steps-block steps-block-red" style="margin-top: 2%;">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 steps-block-col">
+                <div class="col-md-3 col-sm-3 col-lg-3 steps-block-col">
                     <i class="fa fa-truck"></i>
                     <div>
                         <h2>Servicio de entrega</h2>
@@ -95,19 +107,27 @@
                     </div>
                     <span>&nbsp;</span>
                 </div>
-                <div class="col-md-4 steps-block-col">
-                    <i class="fa fa-envelope"></i>
+                <div class="col-md-3 col-sm-3 col-lg-3 steps-block-col">
+                    <i class="fa fa-phone"></i>
                     <div>
-                        <h4><a class="mailto" href="mailto=sales@cubamatrix.com">sales@cubamatrix.com</a></h4>
-                        <em>Contáctenos</em>
+                        <h4>Lunes a Viernes 9:00am a 5:00pm</h4>
+                        <em>786-420-7373</em>
                     </div>
                     <span>&nbsp;</span>
                 </div>
-                <div class="col-md-4 steps-block-col">
-                    <i class="fa fa-phone"></i>
+                <div class="col-md-3 col-sm-3 col-lg-3 steps-block-col">
+                    <i class="fa fa-whatsapp"></i>
                     <div>
-                        <h2>786-420-7373</h2>
-                        <em>Atendemos su llamada 24/7</em>
+                        <h4>WhatsApp</h4>
+                        <em>24/7</em>
+                    </div>
+                    <span>&nbsp;</span>
+                </div>
+                <div class="col-md-3 col-sm-3 col-lg-3 steps-block-col">
+                    <i class="fa fa-envelope"></i>
+                    <div>
+                        <h2>Contacte con nosotros</h2>
+                        <em><a class="mailto" href="mailto=sales@cubamatrix.com">sales@cubamatrix.com</a></em>
                     </div>
                 </div>
             </div>
@@ -123,6 +143,7 @@
     {% include '@CubaMatrixApp/_javascripts.html.twig' with {'path': 'assets/cubamatrix/vendor/jquery/dist/jquery.slim.min.js'} %}
     {% include '@CubaMatrixApp/_javascripts.html.twig' with {'path': 'assets/cubamatrix/vendor/popper.js/dist/umd/popper.min.js'} %}
     {% include '@CubaMatrixApp/_javascripts.html.twig' with {'path': 'assets/cubamatrix/vendor/bootstrap/dist/js/bootstrap.min.js'} %}
+    {% include '@CubaMatrixApp/_javascripts.html.twig' with {'path': 'assets/cubamatrix/js/system.js'} %}
     {{ sonata_block_render_event('sylius.shop.layout.javascripts') }}
 {% endblock %}
 

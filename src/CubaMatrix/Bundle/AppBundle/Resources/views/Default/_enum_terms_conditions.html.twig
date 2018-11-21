@@ -1,0 +1,6 @@
+<ul class="list-unstyled">
+    {% for key, cond in conditions %}
+        <li><b>{{ key }}</b> {{ cond|raw }}</li>
+        <legend></legend>
+    {% endfor %}
+</ul>

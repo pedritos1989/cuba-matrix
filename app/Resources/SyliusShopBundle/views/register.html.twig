@@ -1,0 +1,40 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% form_theme form '@SyliusUi/Form/theme.html.twig' %}
+
+{% block slider %}
+{% endblock %}
+
+{% block content %}
+    {% include '@SyliusShop/Register/_header.html.twig' %}
+
+    {{ sonata_block_render_event('sylius.shop.register.after_content_header') }}
+
+    <div class="ui padded segment">
+        {{ sonata_block_render_event('sylius.shop.register.before_form') }}
+
+        {{ form_start(form, {'action': path('sylius_shop_register'), 'attr': {'class': 'ui loadable form', 'novalidate': 'novalidate'}}) }}
+        {% include '@SyliusShop/Register/_form.html.twig' %}
+
+        {{ sonata_block_render_event('sylius.shop.register.form', {'form': form}) }}
+
+        <div class="custom-control custom-checkbox" style="margin-bottom: 1%">
+            <input type="checkbox" class="custom-control-input" id="register-terms-check">
+            <label class="custom-control-label"
+                   for="register-terms-check"><a class="cubamatrix-theme" target="_blank"
+                                                 href="{{ path('terms_&_conditions') }}">{{ 'system.terms_and_conditions.label'|trans }}</a></label>
+        </div>
+
+        <button type="submit" class="ui large primary button disabled create-account-button">
+            {{ 'sylius.ui.create_an_account'|trans }}
+        </button>
+        {{ form_row(form._token) }}
+        {{ form_end(form, {'render_rest': false}) }}
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    {% include '@CubaMatrixApp/_javascripts.html.twig' with {'path': 'assets/cubamatrix/js/register-user.js'} %}
+    {{ sonata_block_render_event('cubamatrix.shop.register.user.javascripts') }}
+{% endblock %}

@@ -3,6 +3,13 @@ CUBAMATRIX: Cuba Matrix
 system:
   title: Cuba Matrix
   logo: Cuba Matrix logo
+  follow.us: Síguenos
+  terms_and_conditions:
+    label: ACEPTO LOS TÉRMINOS Y CONDICIONES DEL SERVICIO
+    read: (LEER TÉRMINOS)
+  about.us:
+    who_we_are: ¿Quiénes somos?
+  our.store: Nuestra tienda
 
 # Actions
 action:
@@ -24,3 +31,12 @@ product:
 # Taxons
 taxon:
   label: Categorías
+
+sylius:
+  form:
+    login:
+      username: 'Nombre de usuario'
+      password: 'Contraseña'
+    user:
+      password:
+        label: Contraseña

@@ -26,8 +26,9 @@ sylius_shop_default_locale:
 
 _liip_imagine:
   resource: "@LiipImagineBundle/Resources/config/routing.yaml"
-#
-#cuba_matrix_app:
-#  resource: "@CubaMatrixAppBundle/Controller/"
-#  type:     annotation
-#  prefix:   /
+
+cuba_matrix_app:
+  resource: "@CubaMatrixAppBundle/Resources/config/routing.yml"
+  prefix:   /{_locale}
+  requirements:
+    _locale: ^[a-z]{2}(?:_[A-Z]{2})?$

@@ -1,0 +1,20 @@
+categories_page:
+  path: /taxons
+  methods: [GET]
+  defaults: { _controller: cubamatrix.controller.categories.homepage:indexAction}
+
+about_us:
+  path: /about
+  defaults: { _controller: CubaMatrixAppBundle:Default:about}
+
+terms_&_conditions:
+  path: /terminos
+  defaults: { _controller: CubaMatrixAppBundle:Default:conditions}
+
+questions_faqs:
+  path: /questions
+  defaults: { _controller: CubaMatrixAppBundle:Default:questions}
+
+delivery_and_shipping:
+  path: /delivery
+  defaults: { _controller: CubaMatrixAppBundle:Default:delivery}

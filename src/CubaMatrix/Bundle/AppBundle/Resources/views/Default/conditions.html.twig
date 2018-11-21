@@ -1,0 +1,21 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+    <div style="margin-top: 1%">
+        <h2 class="ui horizontal section divider header">
+            {{ 'sylius.ui.terms_and_conditions'|trans }}
+        </h2>
+        <div class="smart-widget m-top-lg widget-dark-blue">
+            <div class="smart-widget-header">
+                <h4>Al usar este sitio web y comprar cualquier artículo a través de este sitio, usted acuerda a
+                    sabiendas y
+                    voluntariamente aceptar los siguientes términos y condiciones:</h4>
+            </div>
+            <div class="smart-widget-inner">
+                <div class="smart-widget-body">
+                    {% include '@CubaMatrixApp/Default/_enum_terms_conditions.html.twig' %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

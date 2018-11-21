@@ -1,0 +1,68 @@
+<footer id="footer" class="ui inverted vertical footer segment">
+    <div class="ui container">
+        <div class="ui inverted {#divided#} equal height stackable grid" style="margin-bottom: 1%">
+            {{ sonata_block_render_event('sylius.shop.layout.before_footer') }}
+
+            <div class="three wide column">
+                <h4 class="ui inverted header">{{ 'system.our.store'|trans }}</h4>
+                <div class="ui inverted link list">
+                    <a href="{{ path('about_us') }}" class="item">{{ 'sylius.ui.about'|trans }}</a>
+                    <a href="{{ path('terms_&_conditions') }}"
+                       class="item">{{ 'sylius.ui.terms_and_conditions'|trans }}</a>
+                    {#<a href="#" class="item">{{ 'sylius.ui.privacy_policy'|trans }}</a>#}
+                    {#<a href="{{ path('sylius_shop_contact_request') }}"#}
+                    {#class="item">{{ 'sylius.ui.contact_us'|trans }}</a>#}
+                </div>
+            </div>
+            <div class="three wide column">
+                <h4 class="ui inverted header">{{ 'sylius.ui.customer_care'|trans }}</h4>
+                <div class="ui inverted link list">
+                    <a href="{{ path('sylius_shop_contact_request') }}"
+                       class="item">{{ 'sylius.ui.contact_us'|trans }}</a>
+                    <a href="{{ path('questions_faqs') }}" class="item">{{ 'sylius.ui.faqs'|trans }}</a>
+                    <a href="{{ path('delivery_and_shipping') }}"
+                       class="item">{{ 'sylius.ui.delivery_and_shipping'|trans }}</a>
+                    {#<a href="#" class="item">{{ 'sylius.ui.returns_policy'|trans }}</a>#}
+                </div>
+            </div>
+            <div class="eight wide column">
+                <h4 class="ui inverted header">&copy; {{ 'system.title'|trans }}</h4>
+                <p>{{ 'sylius.ui.powered_by'|trans }} <a href="http://sylius.com" target="_blank"
+                                                         style="color: #2a579a;"><b>Sylius</b></a>.</p>
+            </div>
+
+            {{ sonata_block_render_event('sylius.shop.layout.after_footer') }}
+        </div>
+        <div class="dropdown-divider" style="border-color:#404040;"></div>
+        <div class="row">
+            <div class="col-md-12 col-sm-12 col-lg-12">
+                <ul class="social-icons list-inline list-unstyled pull-right">
+                    <li class="list-inline-item"><span>{{ 'system.follow.us'|trans }}:</span></li>
+                    {#<li class="responsive-width-li"><br></li>#}
+                    <li class="list-inline-item"><a target="_blank" class="col-md-1 cubamatrix-theme"
+                                                    href="https://www.facebook.com/Cubamatrix-291117415062052"><i
+                                    class="fa fa-facebook-official fa-lg"></i> Cubamatrix</a></li>
+                    <li class="list-inline-item"><a target="_blank" class="col-md-1 cubamatrix-theme"
+                                                    href="https://twitter.com/cubamatrix"><i
+                                    class="fa fa-twitter fa-lg"></i> @cubamatrix</a></li>
+                    <li class="list-inline-item"><a target="_blank" class="col-md-1 cubamatrix-theme"
+                                                    href="https://www.instagram.com/cubamatrix"><i
+                                    class="fa fa-instagram fa-lg"></i> @cubamatrix</a></li>
+                </ul>
+            </div>
+            {#<div class="col-md-6 col-sm-6">#}
+            {#<div class="pre-footer-subscribe-box pull-right">#}
+            {#<h2>Newsletter</h2>#}
+            {#<form action="#">#}
+            {#<div class="input-group">#}
+            {#<input type="text" placeholder="youremail@mail.com" class="form-control">#}
+            {#<span class="input-group-btn">#}
+            {#<button class="btn btn-primary" type="submit">Subscribe</button>#}
+            {#</span>#}
+            {#</div>#}
+            {#</form>#}
+            {#</div>#}
+            {#</div>#}
+        </div>
+    </div>
+</footer>

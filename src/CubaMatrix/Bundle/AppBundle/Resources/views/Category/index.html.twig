@@ -1,0 +1,10 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+    <div style="margin-top: 1%">
+        <h2 class="ui horizontal section divider header">
+            {{ 'taxon.label'|trans }}
+        </h2>
+        {{ render(url('sylius_shop_partial_taxon_index_by_code', {'code': 'category', 'template': '@CubaMatrixApp/Category/_show_all.html.twig'})) }}
+    </div>
+{% endblock %}
