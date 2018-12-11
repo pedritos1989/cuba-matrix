@@ -4,10 +4,16 @@
     <services>
         <defaults public="true"/>
 
-        <service id="cubamatrix.controller.categories.homepage" class="CubaMatrix\Bundle\AppBundle\Controller\CategoryController"
+        <service id="cubamatrix.controller.categories.homepage"
+                 class="CubaMatrix\Bundle\AppBundle\Controller\CategoryController"
                  public="true">
             <argument type="service" id="templating"/>
             <argument type="service" id="doctrine.orm.entity_manager"/>
+        </service>
+
+        <service id="app.form.extension.type.product"
+                 class="CubaMatrix\Bundle\AppBundle\Form\Type\ProductTypeExtension">
+            <tag name="form.type_extension" extended-type="Sylius\Bundle\ProductBundle\Form\Type\ProductType"/>
         </service>
 
     </services>

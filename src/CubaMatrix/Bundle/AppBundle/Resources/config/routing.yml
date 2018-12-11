@@ -18,3 +18,16 @@ questions_faqs:
 delivery_and_shipping:
   path: /delivery
   defaults: { _controller: CubaMatrixAppBundle:Default:delivery}
+
+cubamatrix_shop_get_star_products:
+  path: /star/{count}
+  methods: [GET]
+  defaults:
+    _controller: sylius.controller.product:starProductAction
+    _sylius:
+      template: $template
+      repository:
+        method: findStarProducts
+        arguments:
+        - "expr:service('sylius.context.locale').getLocaleCode()"
+        - '!!int $count'

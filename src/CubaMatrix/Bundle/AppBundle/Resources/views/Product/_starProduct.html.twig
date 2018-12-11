@@ -1,0 +1,10 @@
+{% if products|length > 0 %}
+    <h2 class="ui horizontal section divider header">
+        {{ 'sylius.ui.star_products'|trans }}
+    </h2>
+    <div class="ui four doubling cards">
+        {% for product in products %}
+            {% include '@CubaMatrixApp/Product/_star_product_show.html.twig' %}
+        {% endfor %}
+    </div>
+{% endif %}

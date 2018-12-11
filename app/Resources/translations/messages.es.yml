@@ -40,3 +40,7 @@ sylius:
     user:
       password:
         label: Contraseña
+  ui:
+    star_products: Le recomendamos
+    form.label: ¿Producto recomendado?
+    grid.label: ¿Recomendado?

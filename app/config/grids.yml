@@ -1,0 +1,10 @@
+sylius_grid:
+  grids:
+    sylius_admin_product:
+      fields:
+        star:
+          type: twig
+          label: sylius.ui.grid.label
+          sortable: star
+          options:
+            template: SyliusUiBundle:Grid/Field:enabled.html.twig

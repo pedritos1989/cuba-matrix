@@ -1,0 +1,7 @@
+CubaMatrix\Bundle\AppBundle\Entity\Product:
+  type: entity
+  table: sylius_product
+  fields:
+    star:
+      type: boolean
+      nullable: true

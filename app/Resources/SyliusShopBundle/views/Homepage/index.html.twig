@@ -134,10 +134,12 @@
 {% endblock %}
 
 {% block content %}
+    {{ render(url('cubamatrix_shop_get_star_products', {'count': 4, 'template': '@CubaMatrixApp/Product/_starProduct.html.twig'})) }}
+
     <h2 class="ui horizontal section divider header">
         {{ 'sylius.ui.latest_products'|trans }}
     </h2>
-    {{ render(url('sylius_shop_partial_product_index_latest', {'count': 12, 'template': '@SyliusShop/Product/_horizontalList.html.twig'})) }}
+    {{ render(url('sylius_shop_partial_product_index_latest', {'count': 8, 'template': '@SyliusShop/Product/_horizontalList.html.twig'})) }}
 {% endblock %}
 
 {% block javascripts %}

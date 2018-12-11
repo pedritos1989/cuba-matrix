@@ -138,9 +138,13 @@
     {% endblock %}
 </div>
 
+{% block scrolltop %}
+    <a href="#" class="scroll-to-top hidden-print"><i class="fa fa-chevron-up fa-lg"></i></a>
+{% endblock %}
+
 {% block javascripts %}
     {% include '@SyliusUi/_javascripts.html.twig' with {'path': 'assets/shop/js/app.js'} %}
-    {% include '@CubaMatrixApp/_javascripts.html.twig' with {'path': 'assets/cubamatrix/vendor/jquery/dist/jquery.slim.min.js'} %}
+    {% include '@CubaMatrixApp/_javascripts.html.twig' with {'path': 'assets/cubamatrix/vendor/jquery/dist/jquery.min.js'} %}
     {% include '@CubaMatrixApp/_javascripts.html.twig' with {'path': 'assets/cubamatrix/vendor/popper.js/dist/umd/popper.min.js'} %}
     {% include '@CubaMatrixApp/_javascripts.html.twig' with {'path': 'assets/cubamatrix/vendor/bootstrap/dist/js/bootstrap.min.js'} %}
     {% include '@CubaMatrixApp/_javascripts.html.twig' with {'path': 'assets/cubamatrix/js/system.js'} %}
