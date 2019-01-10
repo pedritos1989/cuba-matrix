@@ -1,0 +1,9 @@
+<div class="ui four doubling cards">
+    {% set incr = 1 %}
+    {% for product in products|shuffle %}
+        {% if incr < 9 %}
+            {% include '@SyliusShop/Product/_box.html.twig' %}
+            {% set incr = incr + 1 %}
+        {% endif %}
+    {% endfor %}
+</div>

@@ -1981,32 +1981,32 @@ a.list-group-item.active:focus {
   -ms-transition: all 0.5s ease;
   -o-transition: all 0.5s ease;
 }
-.search-input input:hover,
-.search-input input:focus {
-  width: 150px;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-}
-.search-input input:hover + .input-icon,
-.search-input input:focus + .input-icon {
-  right: 15px;
-}
-.search-input:hover input,
-.search-input:focus input {
-  width: 150px;
-  transition: all 0.5s ease;
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-}
-.search-input:hover input + .input-icon,
-.search-input:focus input + .input-icon {
-  right: 15px;
-}
+/*.search-input input:hover,*/
+/*.search-input input:focus {*/
+  /*width: 150px;*/
+  /*transition: all 0.5s ease;*/
+  /*-webkit-transition: all 0.5s ease;*/
+  /*-moz-transition: all 0.5s ease;*/
+  /*-ms-transition: all 0.5s ease;*/
+  /*-o-transition: all 0.5s ease;*/
+/*}*/
+/*.search-input input:hover + .input-icon,*/
+/*.search-input input:focus + .input-icon {*/
+  /*right: 15px;*/
+/*}*/
+/*.search-input:hover input,*/
+/*.search-input:focus input {*/
+  /*width: 150px;*/
+  /*transition: all 0.5s ease;*/
+  /*-webkit-transition: all 0.5s ease;*/
+  /*-moz-transition: all 0.5s ease;*/
+  /*-ms-transition: all 0.5s ease;*/
+  /*-o-transition: all 0.5s ease;*/
+/*}*/
+/*.search-input:hover input + .input-icon,*/
+/*.search-input:focus input + .input-icon {*/
+  /*right: 15px;*/
+/*}*/
 .search-input .input-icon {
   display: inline-block;
   position: absolute;

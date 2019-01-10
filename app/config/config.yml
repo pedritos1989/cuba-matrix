@@ -76,4 +76,8 @@ sylius_product:
       classes:
         model: CubaMatrix\Bundle\AppBundle\Entity\Product
         repository: CubaMatrix\Bundle\AppBundle\Entity\Repository\ProductRepository
-        controller: CubaMatrix\Bundle\AppBundle\Controller\ProductController
+
+sylius_mailer:
+  sender:
+    name: CubaMatrix
+    address: no-reply@cubamatrix.com

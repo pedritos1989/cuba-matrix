@@ -12,11 +12,18 @@
             </div>
         </div>
     {% else %}
-        <div class="col-md-3 col-sm-3 col-lg-3" style="margin-bottom: 5%;text-align: center">
-            <a class="cubamatrix-theme"
-               href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}">{{ taxon.name }}
+        <div style="margin-bottom: 2%" class="col-md-4 col-sm-6">
+            <a href="{{ path('sylius_shop_product_index', {'slug': taxon.slug, '_locale': taxon.translation.locale}) }}">
                 {% set path = 'assets/cubamatrix/images/categorias/'~taxon.code~'.png' %}
-                <img width="100" src="{{ asset(path) }}" alt="{{ taxon.name }}" class="ui image"/>
+                <img style="max-height: 70px;max-width: 140px"
+                     src="{{ asset(path) }}" alt="{{ taxon.name }}" class="ui image centered {% if taxon.slug == constant('CubaMatrix\\Bundle\\AppBundle\\CubaMatrixUtils::CONST_VENTILATION') %}
+                        align-ventilation
+                {% else %}
+                        normal-align
+                {% endif %}"/>
+                <div style="text-align: center" class="statistic-title">
+                    <span><strong>{{ taxon.name }}</strong></span>
+                </div>
             </a>
         </div>
     {% endif %}

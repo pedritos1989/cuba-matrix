@@ -1,0 +1,10 @@
+{% extends '@SyliusShop/layout.html.twig' %}
+
+{% block content %}
+    <div style="margin-top: 1%">
+        <h2 class="ui horizontal section divider header">
+            {{ 'offer.label'|trans }}
+        </h2>
+        {{ render(url('cubamatrix_shop_get_offers', {'template': '@CubaMatrixApp/Offer/_show_offers.html.twig'})) }}
+    </div>
+{% endblock %}

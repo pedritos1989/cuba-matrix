@@ -27,15 +27,20 @@ home:
 # Products
 product:
   label: Producto
+  search: Resultados de la búsqueda para "value"
 
 # Taxons
 taxon:
   label: Categorías
 
+# Offers
+offer:
+  label: Ofertas
+
 sylius:
   form:
     login:
-      username: 'Nombre de usuario'
+      username: 'Correo electrónico'
       password: 'Contraseña'
     user:
       password:
@@ -44,3 +49,4 @@ sylius:
     star_products: Le recomendamos
     form.label: ¿Producto recomendado?
     grid.label: ¿Recomendado?
+    add_to_cart.short: Añadir

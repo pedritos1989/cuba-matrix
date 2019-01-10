@@ -1,0 +1,53 @@
+{% block subject %}
+    Muchas gracias por registrarte en Cubamatrix.com
+{% endblock %}
+
+{% block body %}
+    {% set url = channel.hostname is not null ? 'http://' ~ channel.hostname ~ path('sylius_shop_user_verification', { 'token': user.emailVerificationToken}) : url('sylius_shop_user_verification', { 'token': user.emailVerificationToken}) %}
+
+    <div style="text-align: center"><strong>¡Gracias por formar parte de Cubamatrix.com!</strong></div>
+
+    <div style="text-align: center">Para poder acceder y comprar con tu cuenta confirma tu email aquí:</div>
+
+    {% autoescape %}
+        <a href="{{ url|raw }}">{{ url|raw }}</a>
+    {% endautoescape %}
+
+    <div style="text-align: center">Queremos ofrecerte la variedad más grande de productos para Cuba a los mejores
+        precios y brindarte la mejor experiencia de compra en línea.
+    </div>
+
+    <div style="text-align: center">Si tienes alguna duda estamos disponibles para ti en nuestras redes sociales, vía
+        telefónica o enviando un correo a <a href="mailto:sales@cubamatrix.com">sales@cubamatrix.com</a>
+    </div>
+
+    <div style="text-align: center">Comienza ya tu experiencia, visita nuestras ofertas o llena la información de tu
+        perfil ¡felices compras!
+    </div>
+
+    {% autoescape %}
+        <a style="text-align: center"
+           href="www.cubamatrix.com">www.cubamatrix.com</a>
+    {% endautoescape %}
+
+    <div><h4>Síguenos:</h4>
+        <br>
+        <ul style="padding-left: 0;margin-left: -5px;list-style: none;">
+            <li>
+                {% autoescape %}
+                    <a href="https://www.facebook.com/Cubamatrix-291117415062052">Cubamatrix</a>
+                {% endautoescape %}
+            </li>
+            <li>
+                {% autoescape %}
+                    <a href="https://twitter.com/cubamatrix">@cubamatrix</a>
+                {% endautoescape %}
+            </li>
+            <li>
+                {% autoescape %}
+                    <a href="https://www.instagram.com/cubamatrix">@cubamatrix</a>
+                {% endautoescape %}
+            </li>
+        </ul>
+    </div>
+{% endblock %}

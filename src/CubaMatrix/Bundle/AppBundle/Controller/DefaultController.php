@@ -11,6 +11,16 @@ class DefaultController extends Controller
         return $this->render('CubaMatrixAppBundle:Default:about.html.twig');
     }
 
+    public function indexTaxonsAction()
+    {
+        return $this->render('@CubaMatrixApp/Category/index.html.twig');
+    }
+
+    public function indexOffersAction()
+    {
+        return $this->render('@CubaMatrixApp/Offer/index.html.twig');
+    }
+
     public function conditionsAction()
     {
         return $this->render('CubaMatrixAppBundle:Default:conditions.html.twig', array(
@@ -56,4 +66,5 @@ El plazo de emisión del documento de pago será de treinta (30) días hábiles 
     {
         return $this->render('CubaMatrixAppBundle:Default:delivery.html.twig');
     }
+
 }

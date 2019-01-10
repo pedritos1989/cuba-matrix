@@ -1,0 +1,7 @@
+{% if products|length > 0 %}
+    <div class="ui four doubling cards">
+        {% for product in products %}
+            {% include '@CubaMatrixApp/Offer/_offer_view.html.twig' %}
+        {% endfor %}
+    </div>
+{% endif %}

@@ -1,10 +1,15 @@
-@media (max-width: 992px) {
+@media (max-width: 991px) {
+    img.ui.bordered.image {
+        min-height: unset;
+    }
+
     .steps-block-col {
         border: 2px solid #FFF;
-        margin: 0 25px 20px 15px;
-        padding: 20px 20px 15px;
+        margin: 0 25px 20px 13%;
+        padding: 20px 20px 15px !important;
         min-height: auto;
         float: none;
+        min-width: 13em !important;
     }
 
     .steps-block-col .fa {
@@ -38,29 +43,56 @@
     .cubamatrix-theme > img {
         left: 15%;
     }
+
+    div.search-input {
+        left: 5em !important;
+        width: 75% !important;
+    }
+
+    .forgot-pass > button {
+        margin-bottom: 2% !important;
+    }
+
+    .forgot-pass > button, .forgot-pass > a {
+        float: left !important;
+        margin-left: unset !important;
+        width: 100%;
+    }
 }
 
-@media (max-width: 496px) {
-    #center {
-        display: none;
+@media (max-width: 767px) {
+    .steps-block-col {
+        margin-left: 15px !important;
+    }
+
+    .forgot-pass > button {
+        margin-bottom: unset !important;
+        width: unset;
+    }
+
+    .forgot-pass > a {
+        float: right !important;
+        width: unset;
     }
 }
 
 @media (max-width: 610px) {
-    .big-logo {
-        display: none;
-    }
-
-    .small-logo {
-        display: unset;
-    }
-
-    .small-logo > img {
-        width: 5em !important;
-    }
-
     .cubamatrix-theme > img {
         left: 40%;
+    }
+
+    .search-small-box:after {
+        right: 140px;
+    }
+}
+
+@media (max-width: 575px) {
+    .search-small-box:after {
+        right: 10px;
+    }
+
+    .align-ventilation {
+        margin-bottom: 2%;
     }
 }
 
@@ -73,5 +105,77 @@
 @media (max-width: 425px) {
     .cubamatrix-theme > img {
         left: 35%;
+    }
+}
+
+@media (max-width: 470px) {
+    .four.cards > .card {
+        width: 100% !important;
+    }
+
+    .three.cards > .card {
+        width: 100% !important;
+    }
+
+    .big-logo > img {
+        max-width: 165px !important;
+    }
+
+    .actions-box {
+        top: 5.5em;
+    }
+
+    i.sf-wdth {
+        font-size: 40px !important;
+    }
+
+    #right {
+        padding-top: 38px !important;
+    }
+}
+
+@media (max-width: 1199px) {
+    div.search-input {
+        left: 10px;
+    }
+}
+
+@media (max-width: 679px) {
+    .small-search-input {
+        display: unset;
+    }
+
+    .big-search-input {
+        display: none;
+    }
+
+    #center {
+        padding-top: 37px !important;
+    }
+}
+
+@media (max-width: 356px) {
+    .big-logo > img {
+        max-width: 120px !important;
+    }
+
+    .actions-box {
+        top: 4.5em;
+    }
+
+    i.sf-wdth {
+        font-size: 30px !important;
+    }
+}
+
+@media (max-width: 473px) {
+    .forgot-pass > button {
+        margin-bottom: 2% !important;
+    }
+
+    .forgot-pass > button, .forgot-pass > a {
+        float: left !important;
+        margin-left: unset !important;
+        width: 100%;
     }
 }

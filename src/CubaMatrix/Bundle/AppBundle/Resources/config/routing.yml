@@ -1,7 +1,10 @@
 categories_page:
   path: /taxons
-  methods: [GET]
-  defaults: { _controller: cubamatrix.controller.categories.homepage:indexAction}
+  defaults: { _controller: CubaMatrixAppBundle:Default:indexTaxons}
+
+offers_page:
+  path: /offers
+  defaults: { _controller: CubaMatrixAppBundle:Default:indexOffers}
 
 about_us:
   path: /about
@@ -23,11 +26,52 @@ cubamatrix_shop_get_star_products:
   path: /star/{count}
   methods: [GET]
   defaults:
-    _controller: sylius.controller.product:starProductAction
+    _controller: sylius.controller.product:indexAction
     _sylius:
       template: $template
       repository:
         method: findStarProducts
         arguments:
+        - "expr:service('sylius.context.channel').getChannel()"
         - "expr:service('sylius.context.locale').getLocaleCode()"
         - '!!int $count'
+
+cubamatrix_shop_get_offers:
+  path: /shop_offers
+  methods: [GET]
+  defaults:
+    _controller: sylius.controller.product:indexAction
+    _sylius:
+      template: $template
+      repository:
+        method: findOffers
+        arguments:
+        - "expr:service('sylius.context.channel').getChannel()"
+        - "expr:service('sylius.context.locale').getLocaleCode()"
+
+cubamatrix_shop_random_products:
+  path: /all_products
+  methods: [GET]
+  defaults:
+    _controller: sylius.controller.product:indexAction
+    _sylius:
+      template: $template
+      repository:
+        method: allProductsByChannel
+        arguments:
+        - "expr:service('sylius.context.channel').getChannel()"
+        - "expr:service('sylius.context.locale').getLocaleCode()"
+
+cubamatrix_shop_search_products:
+  path: /products_search/
+  methods: [GET]
+  defaults:
+    _controller: sylius.controller.product:indexAction
+    _sylius:
+      template: "@CubaMatrixApp/Product/Filter/index.html.twig"
+      repository:
+        method: searchProduct
+        arguments:
+        - "expr:service('sylius.context.channel').getChannel()"
+        - "expr:service('sylius.context.locale').getLocaleCode()"
+        - "expr:service('request_stack').getCurrentRequest().get('search')"

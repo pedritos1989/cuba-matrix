@@ -1,31 +1,27 @@
 <div class="pull-right">
     {% if is_granted('ROLE_USER') %}
-        <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                {% set user_name = app.user.customer.user|split('@') %}
-                {#{{ 'sylius.ui.hello'|trans }}#}{{ user_name[0] }}
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item"
-                   href="{{ path('sylius_shop_account_dashboard') }}"><i
-                            class="fa fa-user-circle-o fa-lg"></i> {{ 'sylius.ui.my_account'|trans }}</a>
-                <a class="dropdown-item" href="{{ path('sylius_shop_logout') }}"><i
-                            class="fa fa-sign-out fa-lg"></i> {{ 'sylius.ui.logout'|trans }}</a>
-            </div>
+        {% set user_name = app.user.customer.user|split('@') %}
+        <div>
+            <a data-placement="left" class="user-actions-btn" data-toggle="tooltip" title="{{ 'sylius.ui.hello'|trans }} {{ user_name[0] }}"
+               href="#">
+                <i style="font-size: 60px;color: #19b1ef" class="fa fa-user-circle sf-wdth"></i>
+            </a>
+        </div>
+        <div class="actions-box" style="display: none;">
+            <ul class="list-unstyled system-user-options">
+                <li><a href="{{ path('sylius_shop_account_dashboard') }}"><i
+                                class="fa fa-user-circle-o fa-lg"></i> {{ 'sylius.ui.my_account'|trans }}</a></li>
+                <li class="divider"></li>
+                <li><a href="{{ path('sylius_shop_logout') }}"><i
+                                class="fa fa-sign-out fa-lg"></i> {{ 'sylius.ui.logout'|trans }}</a></li>
+            </ul>
         </div>
     {% else %}
-        <div class="dropdown">
-            <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenuButton"
-                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                <i class="fa fa-user-circle fa-lg"></i>
-            </button>
-            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="{{ path('sylius_shop_login') }}"><i
-                            class="fa fa-sign-in fa-lg"></i> {{ 'sylius.ui.login'|trans }}</a>
-                <a class="dropdown-item" href="{{ path('sylius_shop_register') }}"><i
-                            class="fa fa-user-plus fa-lg"></i> {{ 'sylius.ui.register'|trans }}</a>
-            </div>
+        <div>
+            <a data-placement="bottom" data-toggle="tooltip" title="{{ 'sylius.ui.login'|trans }}"
+               href="{{ path('sylius_shop_login') }}">
+                <i style="font-size: 60px;color: #19b1ef" class="fa fa-user-o sf-wdth"></i>
+            </a>
         </div>
     {% endif %}
 </div>
